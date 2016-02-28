@@ -53,18 +53,14 @@ public class DataSourcerBuilder implements DataSource {
 
 		nameAndUnit.add(name);
 		nameAndUnit.add(unit);
-		;
-
 	}
 
 	@Override
 	public Map<LocalDate, Double> getValues() {
-
 		return DataValue;
 	}
 
 	private void sortData() {
 		DataValue = new TreeMap<LocalDate, Double>(DataValue);
 	}
-
 }

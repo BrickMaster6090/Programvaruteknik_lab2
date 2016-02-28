@@ -43,9 +43,7 @@ public class DataCollectionBuilder {
 	 * @return String
 	 */
 	public String getTitle() {
-
 		return xData.getName() + "/" + yData.getName();
-
 	}
 
 	/**
@@ -91,12 +89,9 @@ public class DataCollectionBuilder {
 				for (LocalDate comaprekey : yData.getValues().keySet()) {
 
 					if (resolution.createLabel(xCurrentKey).equals(resolution.createLabel(comaprekey))) {
-
 						divValueY++;
 						yEqualValue = yEqualValue + yData.getValues().get(comaprekey);
-
 					}
-
 				}
 				if (yEqualValue != 0.0)
 					xEqualValue = xData.getValues().get(xCurrentKey);
@@ -105,11 +100,8 @@ public class DataCollectionBuilder {
 
 			} else {
 				xEqualValue = xEqualValue + xData.getValues().get(xCurrentKey);
-
 				divValueX++;
-
 			}
-
 		}
 
 		if (yEqualValue != 0.0) {
@@ -127,7 +119,5 @@ public class DataCollectionBuilder {
 		}
 
 		return finalResult;
-
 	}
-
 }

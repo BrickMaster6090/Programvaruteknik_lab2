@@ -34,7 +34,6 @@ public class DataCollection {
 		this.xUnit = xUnit;
 		this.yUnit = yUnit;
 		this.data = data;
-
 	}
 
 	/**
@@ -52,7 +51,6 @@ public class DataCollection {
 	 * @return String
 	 */
 	public String getXUnit() {
-
 		return xUnit;
 	}
 
@@ -77,5 +75,4 @@ public class DataCollection {
 	public String toString() {
 		return data + " " + title + " " + xUnit + " " + yUnit;
 	}
-
 }

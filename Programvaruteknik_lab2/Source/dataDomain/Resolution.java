@@ -12,35 +12,31 @@ public enum Resolution {
 	YEAR {
 		public String createLabel(LocalDate date) {
 			DateTimeFormatter label = DateTimeFormatter.ofPattern("yyyy");
-
 			return date.format(label).toString();
-
 		}
 	},
+	
 	QUARTER {
 		public String createLabel(LocalDate date) {
 			DateTimeFormatter label = DateTimeFormatter.ofPattern("yyyy Q");
-
 			return date.format(label).toString();
-
 		}
 	},
+	
 	MONTH {
 		public String createLabel(LocalDate date) {
 			DateTimeFormatter label = DateTimeFormatter.ofPattern("yyyy MM");
-
 			return date.format(label).toString();
-
 		}
 	},
+	
 	WEEK {
 		public String createLabel(LocalDate date) {
-			DateTimeFormatter label = DateTimeFormatter.ofPattern("yyyy w");
-
+			DateTimeFormatter label = DateTimeFormatter.ofPattern("YYYY w");
 			return date.format(label).toString();
-
 		}
 	},
+	
 	DAY {
 		public String createLabel(LocalDate date) {
 			return date.toString();
@@ -48,5 +44,4 @@ public enum Resolution {
 	};
 
 	public abstract String createLabel(LocalDate date);
-
 }

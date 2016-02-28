@@ -3,20 +3,28 @@ package dataDomain;
 import java.time.LocalDate;
 import java.util.Map;
 
+/**
+ * @author Daniel CarlstrÃ¶m, Jonatan HÃ¶gberg
+ * @version 28/2-2016
+ * this is the main class that execute the program
+ */
+
 public class Main {
 
 	static DataCollectionBuilder dcb;
 	
+	/**
+	 * @param args
+	 * Sends two data sources to DataCollectionBuilder and then prints the result
+	 */
 	public static void main(String[] args) {
-		//System.out.println("mål: ");
-		//System.out.println(new FootballGoalsSource().getValues());
-		//System.out.println("väder: ");
+		
 		Map<LocalDate,Double> temperature = new TemperatureSource().getValues();
 		Map<LocalDate, Double> goals = new FootballGoalsSource().getValues();
 		
 		DataSourcerBuilder xData = new DataSourcerBuilder();
 		DataSourcerBuilder yData = new DataSourcerBuilder();
-		String xname = "mål", yname = "temperatur",xunit="antal",yunit="grader";
+		String xname = "mÃ¥l", yname = "temperatur",xunit="antal",yunit="grader";
 		
 		for (LocalDate xCurrentKey : goals.keySet()) {
 			xData.setValue(xname, xunit, xCurrentKey, goals.get(xCurrentKey));
@@ -27,12 +35,6 @@ public class Main {
 				
 		dcb = new DataCollectionBuilder(xData, yData, Resolution.DAY);
 		
-		
-		System.out.println(dcb.getResult().toString());
-		
-		
-		
-		
+		System.out.println(dcb.getResult().toString());		
 	}
-
 }

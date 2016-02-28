@@ -6,15 +6,13 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 
 /**
- *
- * @author thomas
+ * @author thomas, Jonatan Högberg, Daniel Carlström
+ * @version 28/2-2016
+ * This class sorts out dates and temperature from the files.
  */
 public class UrlFetcherTemperature {
 
@@ -47,16 +45,6 @@ public class UrlFetcherTemperature {
 			throw new RuntimeException(ex);
 		}
 
-		for (Entry<LocalDate, Double> entry : temperature.entrySet()) {
-			System.out.println(entry.getKey() + ": " + entry.getValue());
-		}
-
 		return temperature;
 	}
-
-	//public static void main(String[] args) {
-		//System.out.println(new UrlFetcherTemperature(
-			//	"http://opendata-download-metobs.smhi.se/api/version/latest/parameter/2/station/107420/period/corrected-archive/data.csv")
-				//		.getContent());
-	//}
 }
